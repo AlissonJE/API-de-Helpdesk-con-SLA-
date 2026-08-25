@@ -1,0 +1,351 @@
+{
+  "info": {
+    "_postman_id": "f8b14757-67af-4b1c-9b41-7552509b81e9",
+    "name": "HelpDeskApi1",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+    "_exporter_id": "56076623",
+    "_collection_link": "https://go.postman.co/collection/56076623-f8b14757-67af-4b1c-9b41-7552509b81e9?source=collection_link"
+  },
+  "item": [
+    {
+      "name": "El Asmins",
+      "item": [
+        {
+          "name": "Admin",
+          "request": {
+            "method": "POST",
+            "header": []
+          },
+          "response": []
+        },
+        {
+          "name": "Login Admin",
+          "request": {
+            "method": "POST",
+            "header": [],
+            "body": {
+              "mode": "raw",
+              "raw": "{\r\n  \"email\": \"admin@correo.com\",\r\n  \"password\": \"123456\"\r\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            },
+            "url": {
+              "raw": "http://localhost:8080/api/auth/login",
+              "protocol": "http",
+              "host": [
+                "localhost"
+              ],
+              "port": "8080",
+              "path": [
+                "api",
+                "auth",
+                "login"
+              ]
+            }
+          },
+          "response": []
+        }
+      ]
+    },
+    {
+      "name": "Post´s",
+      "item": [
+        {
+          "name": "registrar usuario",
+          "request": {
+            "method": "POST",
+            "header": [],
+            "body": {
+              "mode": "raw",
+              "raw": "{\r\n  \"nombre\": \"Juan Perez\",\r\n  \"email\": \"juan@correo.com\",\r\n  \"password\": \"123456\"\r\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            },
+            "url": {
+              "raw": "http://localhost:8080/api/auth/registro",
+              "protocol": "http",
+              "host": [
+                "localhost"
+              ],
+              "port": "8080",
+              "path": [
+                "api",
+                "auth",
+                "registro"
+              ]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "login",
+          "request": {
+            "method": "POST",
+            "header": [],
+            "url": {
+              "raw": "http://localhost:8080/api/auth/login",
+              "protocol": "http",
+              "host": [
+                "localhost"
+              ],
+              "port": "8080",
+              "path": [
+                "api",
+                "auth",
+                "login"
+              ]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "refreshToken",
+          "request": {
+            "method": "POST",
+            "header": [],
+            "body": {
+              "mode": "raw",
+              "raw": "{\r\n  \"refreshToken\": \"PEGA_AQUI_EL_REFRESH_TOKEN_DEL_PASO_ANTERIOR\"\r\n}\r\n",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            },
+            "url": {
+              "raw": "http://localhost:8080/api/auth/refresh",
+              "protocol": "http",
+              "host": [
+                "localhost"
+              ],
+              "port": "8080",
+              "path": [
+                "api",
+                "auth",
+                "refresh"
+              ]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "LogOut",
+          "request": {
+            "method": "POST",
+            "header": [
+              {
+                "key": "Authorization",
+                "value": "Bearer",
+                "type": "text"
+              }
+            ],
+            "url": {
+              "raw": "LogOut",
+              "host": [
+                "LogOut"
+              ]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "Conf LogOut",
+          "request": {
+            "method": "POST",
+            "header": [],
+            "body": {
+              "mode": "raw",
+              "raw": "{\r\n  \"refreshToken\": \"e696640f-3741-457d-b1fc-6bcb5f9e8de2\"\r\n}\r\n",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            },
+            "url": {
+              "raw": "http://localhost:8080/api/auth/refresh",
+              "protocol": "http",
+              "host": [
+                "localhost"
+              ],
+              "port": "8080",
+              "path": [
+                "api",
+                "auth",
+                "refresh"
+              ]
+            }
+          },
+          "response": []
+        }
+      ]
+    },
+    {
+      "name": "Get´s",
+      "item": [
+        {
+          "name": "Acess Deny",
+          "request": {
+            "method": "GET",
+            "header": [],
+            "url": {
+              "raw": "http://localhost:8080/api/tickets/mios",
+              "protocol": "http",
+              "host": [
+                "localhost"
+              ],
+              "port": "8080",
+              "path": [
+                "api",
+                "tickets",
+                "mios"
+              ]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "Acess Deny (rol)",
+          "request": {
+            "method": "GET",
+            "header": [
+              {
+                "key": "Authorization",
+                "value": "Bearer eyJhbGciOiJIUzI1NiJ9.eyJyb2wiOiJVU1VBUklPIiwic3ViIjoianVhbkBjb3JyZW8uY29tIiwiaWF0IjoxNzg3NjM1NTA0LCJleHAiOjE3ODc2MzY0MDR9.oXKz6nXoARNilwbQPaFu-luUek_LI4lt5SrgTVscI1A",
+                "type": "text"
+              }
+            ],
+            "url": {
+              "raw": "http://localhost:8080/api/tickets",
+              "protocol": "http",
+              "host": [
+                "localhost"
+              ],
+              "port": "8080",
+              "path": [
+                "api",
+                "tickets"
+              ]
+            }
+          },
+          "response": []
+        }
+      ]
+    },
+    {
+      "name": "Listado",
+      "item": [
+        {
+          "name": "Cambio de rol",
+          "request": {
+            "method": "POST",
+            "header": [
+              {
+                "key": "Authorization",
+                "value": "Bearer eyJhbGciOiJIUzI1NiJ9.eyJyb2wiOiJBRE1JTiIsInN1YiI6ImFkbWluQGNvcnJlby5jb20iLCJpYXQiOjE3ODc2MzYxMTMsImV4cCI6MTc4NzYzNzAxM30.STadkAMC8gW96FPoAZ01iMI8iXZmO6BK_4HK8EbSz4Y",
+                "type": "text"
+              }
+            ],
+            "body": {
+              "mode": "raw",
+              "raw": "{\r\n  \"email\": \"juan@correo.com\"\r\n}\r\n",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            },
+            "url": {
+              "raw": "http://localhost:8080/api/admin/soporte",
+              "protocol": "http",
+              "host": [
+                "localhost"
+              ],
+              "port": "8080",
+              "path": [
+                "api",
+                "admin",
+                "soporte"
+              ]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "Ticket vencido",
+          "request": {
+            "method": "GET",
+            "header": [
+              {
+                "key": "Authorization",
+                "value": "Bearer eyJhbGciOiJIUzI1NiJ9.eyJyb2wiOiJTT1BPUlRFIiwic3ViIjoianVhbkBjb3JyZW8uY29tIiwiaWF0IjoxNzg3NjM2NDQ1LCJleHAiOjE3ODc2MzczNDV9.12dUMf3AZsTFPj6iRXVJyMjqfKlusvnGoDCqt3-jh4k",
+                "type": "text"
+              }
+            ],
+            "url": {
+              "raw": "http://localhost:8080/api/tickets/vencidos",
+              "protocol": "http",
+              "host": [
+                "localhost"
+              ],
+              "port": "8080",
+              "path": [
+                "api",
+                "tickets",
+                "vencidos"
+              ]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "Ticket",
+          "request": {
+            "method": "POST",
+            "header": [
+              {
+                "key": "Authorization",
+                "value": "Bearer eyJhbGciOiJIUzI1NiJ9.eyJyb2wiOiJVU1VBUklPIiwic3ViIjoianVhbjJAY29ycmVvLmNvbSIsImlhdCI6MTc4NzY0MDAzNiwiZXhwIjoxNzg3NjQwOTM2fQ.LbRr1IG9IkGxlQcbVl8OEIZTaViiy7BAA06T-C-fi9Y",
+                "type": "text"
+              }
+            ],
+            "body": {
+              "mode": "raw",
+              "raw": "{\r\n  \"titulo\": \"No puedo entrar al sistema\",\r\n  \"descripcion\": \"Me sale error 500 al iniciar sesion\",\r\n  \"prioridad\": \"ALTA\"\r\n}\r\n",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            },
+            "url": {
+              "raw": "http://localhost:8080/api/tickets",
+              "protocol": "http",
+              "host": [
+                "localhost"
+              ],
+              "port": "8080",
+              "path": [
+                "api",
+                "tickets"
+              ]
+            }
+          },
+          "response": []
+        }
+      ]
+    }
+  ],
+  "variable": [
+    {
+      "key": "json_web_token_0ypc",
+      "secret": true
+    }
+  ]
+}

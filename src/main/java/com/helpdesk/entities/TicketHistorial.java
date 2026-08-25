@@ -6,9 +6,7 @@ import lombok.*;
 
 import java.time.LocalDateTime;
 
-/**
- * Reto opcional: historial de cambios de estado por ticket.
- */
+
 @Entity
 @Table(name = "ticket_historial")
 @Getter

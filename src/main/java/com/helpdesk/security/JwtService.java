@@ -16,11 +16,7 @@ import java.util.HashMap;
 import java.util.Map;
 import java.util.function.Function;
 
-/**
- * Genera y valida el access token (JWT). El refresh token NO se genera aqui:
- * se persiste como un identificador aleatorio en la tabla refresh_tokens
- * (Opcion A del taller), por lo que este servicio solo firma access tokens.
- */
+
 @Service
 public class JwtService {
 

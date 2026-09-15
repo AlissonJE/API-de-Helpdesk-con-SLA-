@@ -1,8 +1,21 @@
-FROM eclipse-temurin:21-jdk-alpine
+FROM maven:3.9-eclipse-temurin-21 AS builder
+
 WORKDIR /app
 
-COPY . .
-RUN chmod +x mvnw
-RUN ./mvnw clean package -DskipTests -B
+COPY pom.xml .
 
-ENTRYPOINT ["java", "-jar", "/app/target/security-0.0.1-SNAPSHOT.jar"]
+RUN mvn dependency:go-offline -B
+
+COPY src ./src
+
+RUN mvn clean package -DskipTests -B
+
+FROM eclipse-temurin:21-jre
+
+WORKDIR /app
+
+COPY --from=builder /app/target/*.jar app.jar
+
+EXPOSE 8080
+
+ENTRYPOINT ["java", "-jar", "app.jar"]
